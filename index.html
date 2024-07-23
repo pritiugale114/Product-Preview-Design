@@ -5,12 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product preview design</title>
     <style>
+        .product-container{
+           height:600px;
+           width: 400px;
+           margin: 20px auto;
+        }
+        .main-img{
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border: 1px solid black;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 0px rgb(92, 90, 90);
+            margin: 20px auto;
+        }
+        .main-img:hover{
+            box-shadow: 0px 0px 10px 0px rgb(0, 0, 0.25);
+        }
+        .preview-img-conatiner{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
+
+        }
+        .preview-img{
+            height: 70px;
+            border: 1px solid black;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius:10px;
+            margin-left:10px;
+           
+        }
+        .preview-img:hover{
+            box-shadow: 0px 0px 10px 0px rgb(34, 32, 32);
+        }
+        
 
     </style>
 </head>
 <body>
-    
+    <div class="product-container">
+        <img src="main-img.jpg" class="main-img" id="main-img">
+        <div class="preview-img-conatiner">
+            <img src="main-img.jpg" class="preview-img" onclick="changeimg('main-img.jpg')">
+            <img src="1.jpg" class="preview-img" onclick="changeimg('1.jpg')">
+            <img src="2.jpg" class="preview-img" onclick="changeimg('2.jpg')">
+            <img src="3.jpg" class="preview-img" onclick="changeimg('3.jpg')">
+            <img src="4.jpg" class="preview-img" onclick="changeimg('4.jpg')">
+        </div>
+
+    </div>
     <script>
+        function changeimg(imagename){
+            const mainimage = document.getElementById("main-img");
+            mainimage.src= imagename;
+        }
 
     </script>
 </body>
